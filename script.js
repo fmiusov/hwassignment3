@@ -15,7 +15,7 @@ var passObj = {
   }
   
   function genNum() {
-      return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+      return parseInt(String.fromCharCode(Math.floor(Math.random() * 10) + 48));
   }
   
   function genSym() {
@@ -36,7 +36,12 @@ var passObj = {
   function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-  
+    var length = parseInt(prompt("How many characters do you want in your password?"))
+    var uppercase = confirm("Should it contain uppercase characters?")
+    var lowercase = confirm("How about lowercase characters?")
+    var numbers = confirm("Do you want numbers?")
+    var symbols = confirm("Finally...any special characters?")
+    
     passwordText.value = password;
   
   }
