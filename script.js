@@ -2,36 +2,44 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
+
 function generatePassword() {
-  for (var i = 0; i < length; i++) var genPass = [];
+  var uppercase = str.split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  var lowercase = str.split("abcdefghijklmnopqrstuvwxyz");
+  var numbers = str.split("0123456789");
+  var symbols = str.split(" ~!@#$%^&*()_+");
+  var passwordSelection = [];
   var length = parseInt(
     prompt("How many characters do you want in your password?")
   );
   var uppercase = confirm("Should it contain uppercase characters?");
-  var lowercase = confirm("How about lowercase characters?");
-  var numbers = confirm("Do you want numbers?");
-  var symbols = confirm("Finally...any special characters?");
-
   if (uppercase) {
-    genUp().push(genPass);
-  } else if (lowercase) {
-    genLow().push(genPass);
-  } else if (numbers) {
-    genNum().push(genPass);
-  } else if (symbols) {
-    genSym().push(genPass);
-  } else {
-    alert("Password Generation Cancelled");
+    passwordSelection.push(uppercase);
   }
-  console.log(arr.String(genPass));
+  var lowercase = confirm("How about lowercase characters?");
+  if (lowercase) {
+    passwordSelection.push(lowercase);
+  }
+  var numbers = confirm("Do you want numbers?");
+  if (numbers) {
+    passwordSelection.push(numbers);
+  }
+  var symbols = confirm("Finally...any special characters?");
+  if (symbols) {
+    passwordSelection.push(symbols);
+  }
+  for (var i = 0; i < length; i++) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+  }
+  return passwordResult;
 }
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
