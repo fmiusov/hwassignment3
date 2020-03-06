@@ -79,12 +79,11 @@ function generatePassword() {
   ];
   var passwordSelection = [];
   var passwordlength = parseInt(
-    prompt("How many characters do you want in your password?")
+    prompt("How many characters do you want in your password (max of 30)?")
   );
-  if (isNaN(passwordlength)) {
+  if (isNaN(passwordlength) || (passwordlength <= 0) || (passwordlength > 30))  {
     alert(
-      "Wow...are you stupid? That isn't a number. Click the red button and do it right next time."
-      // ok, so it isn't exactly a good user experience, but I kind of wish errors read this way
+      "You need to enter a number between 0 and 30."
     );
   } else {
     var upperConfirm = confirm("Should it contain uppercase characters?");
