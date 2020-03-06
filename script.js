@@ -78,7 +78,7 @@ function generatePassword() {
     "+"
   ];
   var passwordSelection = [];
-  var passwordlength = parseInt(
+  var passwordlength = Number(
     prompt("How many characters do you want in your password (max of 30)?")
   );
   if (isNaN(passwordlength) || (passwordlength <= 0) || (passwordlength > 30))  {
@@ -86,6 +86,7 @@ function generatePassword() {
       "You need to enter a number between 0 and 30."
     );
   } else {
+    console.log(passwordlength)
     var upperConfirm = confirm("Should it contain uppercase characters?");
     var lowerConfirm = confirm("How about lowercase characters?");
     var numberConfirm = confirm("Do you want numbers?");
