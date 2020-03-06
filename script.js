@@ -88,17 +88,21 @@ function generatePassword() {
 
   if (u) {
     var passwordSelection = passwordSelection.concat(uppercase);
-  } if (l) {
+  }
+  if (l) {
     var passwordSelection = passwordSelection.concat(lowercase);
-  } if (n) {
+  }
+  if (n) {
     var passwordSelection = passwordSelection.concat(numbers);
-  } if (s) {
+  }
+  if (s) {
     var passwordSelection = passwordSelection.concat(symbols);
   }
-//   for (var i = 0; i < length; i++) {
-//     var customPassword = passwordSelection[Math.floor(Math.random()) * i];
-//   }
-  return passwordSelection;
+  var customPassword = [];
+  for (var i = 0; i < length; i++) {
+    customPassword.concat(passwordSelection[Math.floor(Math.random())]);
+  }
+  return toString(customPassword);
 }
 
 function writePassword() {
