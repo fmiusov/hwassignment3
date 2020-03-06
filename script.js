@@ -121,5 +121,20 @@ function writePassword() {
   passwordText.value = password;
 }
 
+function copypass() {
+  var copyText = document.getElementById("password");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + copyText.value;
+}
+
+function confirmcopy() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
