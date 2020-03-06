@@ -4,34 +4,103 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 function generatePassword() {
-  var uppercase = str.split("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-  var lowercase = str.split("abcdefghijklmnopqrstuvwxyz");
-  var numbers = str.split("0123456789");
-  var symbols = str.split(" ~!@#$%^&*()_+");
+  var uppercase = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ];
+  var lowercase = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+  ];
+  var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var symbols = [
+    " ",
+    "~",
+    "!",
+    "@",
+    "#",
+    "$",
+    "%",
+    "^",
+    "&",
+    "*",
+    "(",
+    ")",
+    "_",
+    "+"
+  ];
   var passwordSelection = [];
   var length = parseInt(
     prompt("How many characters do you want in your password?")
   );
-  var uppercase = confirm("Should it contain uppercase characters?");
-  if (uppercase) {
-    passwordSelection.push(uppercase);
-  }
-  var lowercase = confirm("How about lowercase characters?");
-  if (lowercase) {
-    passwordSelection.push(lowercase);
-  }
-  var numbers = confirm("Do you want numbers?");
-  if (numbers) {
-    passwordSelection.push(numbers);
-  }
-  var symbols = confirm("Finally...any special characters?");
-  if (symbols) {
-    passwordSelection.push(symbols);
-  }
-  for (var i = 0; i < length; i++) {
-    retVal += charset.charAt(Math.floor(Math.random() * n));
-  }
-  return passwordResult;
+  var u = confirm("Should it contain uppercase characters?")
+    if (u) {
+        passwordSelection.push(uppercase);
+    }
+  var l = confirm("How about lowercase characters?")
+    if (l) {
+        passwordSelection.push(lowercase);
+    }
+  var n = confirm("Do you want numbers?");
+    if (n) {
+        passwordSelection.push(numbers);
+    }
+  var s = confirm("Finally...any special characters?");
+    if (s) {
+        passwordSelection.push(symbols);
+    }
+//   for (var i = 0; i < length; i++) {
+//     retVal += charset.charAt(Math.floor(Math.random() * n));
+//   }
+  return passwordSelection;
 }
 
 function writePassword() {
