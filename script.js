@@ -81,24 +81,22 @@ function generatePassword() {
   var length = parseInt(
     prompt("How many characters do you want in your password?")
   );
-  var u = confirm("Should it contain uppercase characters?")
-    if (u) {
-        passwordSelection.push(uppercase);
-    }
-  var l = confirm("How about lowercase characters?")
-    if (l) {
-        passwordSelection.push(lowercase);
-    }
+  var u = confirm("Should it contain uppercase characters?");
+  var l = confirm("How about lowercase characters?");
   var n = confirm("Do you want numbers?");
-    if (n) {
-        passwordSelection.push(numbers);
-    }
   var s = confirm("Finally...any special characters?");
-    if (s) {
-        passwordSelection.push(symbols);
-    }
+
+  if (u) {
+    var passwordSelection = passwordSelection.concat(uppercase);
+  } if (l) {
+    var passwordSelection = passwordSelection.concat(lowercase);
+  } if (n) {
+    var passwordSelection = passwordSelection.concat(numbers);
+  } if (s) {
+    var passwordSelection = passwordSelection.concat(symbols);
+  }
 //   for (var i = 0; i < length; i++) {
-//     retVal += charset.charAt(Math.floor(Math.random() * n));
+//     var customPassword = passwordSelection[Math.floor(Math.random()) * i];
 //   }
   return passwordSelection;
 }
