@@ -22,3 +22,19 @@ Additional functions were added for accessibility, which include hover text for 
    arrows. The confirm alerts could be replaced with radio buttons or check boxes, so that the user could go back and change their mind. This would also allow the user to generate multiple passwords without having to wonder which parameters were set.
 
 3. Converting strings to arrays and concatenating those arrays into a blank array was not as simple as I thought. Several method calls were attempted before settling on `concat()`. A big eureka moment came with the decision to use `join("")` to eliminate all the commas when converting the finished array back to a string.
+
+4. Restricting the character length became an important factor after test user tried to generate a 100k character long password and crashed the browser. Character length restricted to a max of 30 characters.
+
+## Gallery
+
+![Password Generation Prompt and Hover Text](../images/PasswordGen_PromptAndHoverText.PNG)
+**Password Generation Prompt and Hover Text**
+
+![Password Error Message](../images/PasswordGen_ErrorMessage.PNG)
+**Password Error Message**
+
+![Password Generation Complete](../images/PasswordGen_Complete.PNG)
+**Password Generation Complete**
+
+![Password Copy Button Clicked](../images/PasswordGen_AfterCopy.PNG)
+**Password Copy Button Clicked**
