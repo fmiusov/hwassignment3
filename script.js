@@ -78,34 +78,40 @@ function generatePassword() {
     "+"
   ];
   var passwordSelection = [];
-  var length = parseInt(
+  var passwordlength = parseInt(
     prompt("How many characters do you want in your password?")
   );
-  var u = confirm("Should it contain uppercase characters?");
-  var l = confirm("How about lowercase characters?");
-  var n = confirm("Do you want numbers?");
-  var s = confirm("Finally...any special characters?");
+  if (isNaN(passwordlength)) {
+    alert(
+      "Wow...are you stupid? That isn't a number. Click the red button and do it right next time."
+      // ok, so it isn't exactly a good user experience, but I kind of wish errors read this way
+    );
+  } else {
+    var upperConfirm = confirm("Should it contain uppercase characters?");
+    var lowerConfirm = confirm("How about lowercase characters?");
+    var numberConfirm = confirm("Do you want numbers?");
+    var specialConfirm = confirm("Finally...any special characters?");
 
-  if (u) {
-    var passwordSelection = passwordSelection.concat(uppercase);
+    if (upperConfirm) {
+      var passwordSelection = passwordSelection.concat(uppercase);
+    }
+    if (lowerConfirm) {
+      var passwordSelection = passwordSelection.concat(lowercase);
+    }
+    if (numberConfirm) {
+      var passwordSelection = passwordSelection.concat(numbers);
+    }
+    if (specialConfirm) {
+      var passwordSelection = passwordSelection.concat(symbols);
+    }
+    var customPassword = [];
+    for (var i = 0; i < passwordlength; i++) {
+      var x = Math.floor(Math.random() * passwordSelection.length);
+      var customPassword = customPassword.concat(passwordSelection[x]);
+    }
   }
-  if (l) {
-    var passwordSelection = passwordSelection.concat(lowercase);
-  }
-  if (n) {
-    var passwordSelection = passwordSelection.concat(numbers);
-  }
-  if (s) {
-    var passwordSelection = passwordSelection.concat(symbols);
-  }
-  var customPassword = [];
-  for (var i = 0; i < length; i++) {
-    
-    var x = Math.floor(Math.random() * passwordSelection.length)
-    var customPassword = customPassword.concat(passwordSelection[x]);
-  }
-  
-  return customPassword = customPassword.join("");
+
+  return (customPassword = customPassword.join(""));
 }
 
 function writePassword() {
@@ -117,4 +123,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
