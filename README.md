@@ -27,14 +27,14 @@ Additional functions were added for accessibility, which include hover text for 
 
 ## Gallery
 
-![Password Generation Prompt and Hover Text](../images/PasswordGen_PromptAndHoverText.PNG)
+![Password Generation Prompt and Hover Text](/images/PasswordGen_PromptAndHoverText.PNG)
 **Password Generation Prompt and Hover Text**
 
-![Password Error Message](../images/PasswordGen_ErrorMessage.PNG)
+![Password Error Message](/images/PasswordGen_ErrorMessage.PNG)
 **Password Error Message**
 
-![Password Generation Complete](../images/PasswordGen_Complete.PNG)
+![Password Generation Complete](/images/PasswordGen_Complete.PNG)
 **Password Generation Complete**
 
-![Password Copy Button Clicked](../images/PasswordGen_AfterCopy.PNG)
+![Password Copy Button Clicked](/images/PasswordGen_AfterCopy.PNG)
 **Password Copy Button Clicked**
