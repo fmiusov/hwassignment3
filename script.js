@@ -88,17 +88,24 @@ function generatePassword() {
 
   if (u) {
     var passwordSelection = passwordSelection.concat(uppercase);
-  } if (l) {
+  }
+  if (l) {
     var passwordSelection = passwordSelection.concat(lowercase);
-  } if (n) {
+  }
+  if (n) {
     var passwordSelection = passwordSelection.concat(numbers);
-  } if (s) {
+  }
+  if (s) {
     var passwordSelection = passwordSelection.concat(symbols);
   }
-//   for (var i = 0; i < length; i++) {
-//     var customPassword = passwordSelection[Math.floor(Math.random()) * i];
-//   }
-  return passwordSelection;
+  var customPassword = [];
+  for (var i = 0; i < length; i++) {
+    
+    var x = Math.floor(Math.random() * passwordSelection.length)
+    var customPassword = customPassword.concat(passwordSelection[x]);
+  }
+  
+  return customPassword = customPassword.join("");
 }
 
 function writePassword() {
@@ -111,20 +118,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// ```
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-// ```
