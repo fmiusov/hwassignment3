@@ -86,7 +86,7 @@ function generatePassword() {
       "You need to enter a number between 0 and 30."
     );
   } else {
-    console.log(passwordlength)
+    
     var upperConfirm = confirm("Should it contain uppercase characters?");
     var lowerConfirm = confirm("How about lowercase characters?");
     var numberConfirm = confirm("Do you want numbers?");
