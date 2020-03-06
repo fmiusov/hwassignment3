@@ -120,13 +120,14 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
+// I copied a lot of the below code from the W3 example, but tried to at least
+// modify function names and some id's to demonstrate that I learned it
 function copypass() {
   var copyText = document.getElementById("password");
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
-  
+
   var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Copied: " + copyText.value;
 }
@@ -134,6 +135,10 @@ function copypass() {
 function confirmcopy() {
   var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Copy to clipboard";
+}
+function confirmpass() {
+  var gentooltip = document.getElementById("genTooltip");
+  gentooltip.innerHTML = "Follow Prompts and Generate Password";
 }
 
 // Add event listener to generate button

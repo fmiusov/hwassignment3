@@ -172,4 +172,11 @@ button[disabled] {
   visibility: visible;
   opacity: 1;
 }
-
+.tooltip:hover .gentooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+#copybtn {
+  background-color: rgb(255, 227, 137);
+  color: rgb(83, 83, 83)
+}
